@@ -1,37 +1,26 @@
-# Meujogo
+import javax.swing.JFrame;
 
-Inicio
-package meujogo.modulo;
+import meujogo.modulo.Fase;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-
-public class Fase extends JPanel {
-
-	private Image fundo;
+public class Meujogo extends JFrame {
 	
-	public Fase() {
-	ImageIcon referencia = new ImageIcon("res//background.png");
-	fundo = referencia.getImage();
-				
-	}
-
-    public void paint(Graphics g) {
-    	Graphics2D graficos = (Graphics2D)	g;	
-    	graficos.drawImage(fundo, 0, 0, null);
-    	g.dispose();
-    	
+    
+    public Meujogo(){
+    add(new Fase());
+	setTitle("Meu Jogo");
+	setSize(1024,728);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setLocationRelativeTo(null);
+	this.setResizable(false);
+	setVisible(true);	
+}
+    public static void main (String[]args) {
+    new Meujogo();	
     	
     	
     }
-    
-    
-    
-    
+
 
 
 }
+
